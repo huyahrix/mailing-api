@@ -1,3 +1,12 @@
+/*
+ * @Author: huyahrix
+ * @Email: infjnite@gmail.com
+ * @Date: 2019-11-15 11:07:12
+ * @Last Modified by:   huyahrix
+ * @Last Modified time: 2019-11-15 11:07:12
+ * @Description: Description
+ */
+
 var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var config = require('../../../config'); // get our config file
 
