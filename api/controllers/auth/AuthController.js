@@ -13,7 +13,7 @@ var User = require('../user/User');
  */
 var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var bcrypt = require('bcryptjs');
-var config = require('../config'); // get config file
+var config = require('../../../config'); // get config file
 
 router.post('/login', function(req, res) {
 

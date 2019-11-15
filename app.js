@@ -1,7 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var routes = require("./config/routes.js");
-var db = require('./config/db');
+var db = require('./config/mongodb');
 
 global.__root   = __dirname + '/'; 
 var app = express();
