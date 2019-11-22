@@ -11,6 +11,9 @@ var appRouter = function (app) {
     var AuthController = require('../api/controllers/auth/AuthController');
     app.use('/api/auth', AuthController);
 
+    var MongodbController = require('../api/controllers/mongodb/createCollection');
+    app.use('/api/mongodb', MongodbController);
+
     // app.post('', (req, res) => {
 
     // })
