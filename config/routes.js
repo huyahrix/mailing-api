@@ -7,12 +7,12 @@ var appRouter = function (app) {
     var UserController = require('../api/controllers/user/UserController');
     app.use('/api/users', UserController);
 
-
     var AuthController = require('../api/controllers/auth/AuthController');
     app.use('/api/auth', AuthController);
 
-    var MongodbController = require('../api/controllers/mongodb/createCollection');
+    var MongodbController = require('../api/controllers/mongodb/createDatabase');
     app.use('/api/mongodb', MongodbController);
+
 
     // app.post('', (req, res) => {
 

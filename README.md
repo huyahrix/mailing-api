@@ -1,22 +1,9 @@
-# Securing RESTful APIs with JWT
+# Express-RestAPI
 
-![]()
+# Express Tutorial Part 3: Using a Database (with Mongoose)
+https://developer.mozilla.org/vi/docs/Learn/Server-side/Express_Nodejs/mongoose
+https://github.com/mdn/express-locallibrary-tutorial.git
 
-How to secure a Nodejs RESTful CRUD API using JSON web tokens?
 
-This tutorial will demo how to use JWT with an existing bare bones 
-API using mongodb as the database.
-
-It consist of a User model and controller. The model
-defines the data, and the controller will contain all 
-the business logic needed to interact with the database. 
-
-It has a db file which will be used to
-connect the app to the database, and an app file used
-for bootstrapping the application itself.
-
-The server file is used to spin up the server and tells the
-app to listen on a specific port.
-
-The auth folder contains the configuration for registering and 
-logging users in, signing and verifying tokens.
+# Express & mongoose REST API Boilerplate in ES6 with Code Coverage
+https://github.com/kunalkapadia/express-mongoose-es6-rest-api.git
