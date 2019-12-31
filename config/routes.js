@@ -12,12 +12,7 @@ var appRouter = function (app) {
 
     var MongodbController = require('../api/controllers/mongodb/createDatabase');
     app.use('/api/mongodb', MongodbController);
-
-
-    // app.post('', (req, res) => {
-
-    // })
-
+    app.use('/api/mongodb', require('../api/controllers/mongodb/find'));
 };
 
 module.exports = appRouter;

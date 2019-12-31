@@ -4,9 +4,10 @@
  * @Email: infjnite@gmail.com
  * @Date: 2019-11-18 13:39:16
  * @Last Modified by: huyahrix
- * @Last Modified time: 2019-11-25 17:28:21
+ * @Last Modified time: 2019-12-19 09:40:31
  * @Description: https://www.w3schools.com/nodejs/nodejs_mongodb_createcollection.asp
  */
+//////////////////////////////    Node.js MongoDB Query   //////////////////////////////
 
 var express = require('express');
 var router = express.Router();

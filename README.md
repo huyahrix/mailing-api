@@ -7,3 +7,15 @@ https://github.com/mdn/express-locallibrary-tutorial.git
 
 # Express & mongoose REST API Boilerplate in ES6 with Code Coverage
 https://github.com/kunalkapadia/express-mongoose-es6-rest-api.git
+
+# ANSI codes for debug messages
+https://telepathy.freedesktop.org/doc/telepathy-glib/telepathy-glib-debug-ansi.html
+
+# mongodb native drivers
+https://viblo.asia/p/su-dung-mongodb-voi-nodejs-ZDEeLXRoeJb
+https://docs.mongodb.com/manual/crud/
+http://mongodb.github.io/node-mongodb-native/3.3/api/MongoClient.html
+https://www.npmjs.com/package/mongodb
+
+#
+https://blog.fullstacktraining.com/res-json-vs-res-send-vs-res-end-in-express/
