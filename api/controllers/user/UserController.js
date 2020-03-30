@@ -3,13 +3,14 @@
  * @Email: infjnite@gmail.com
  * @Date: 2019-11-15 11:07:25
  * @Last Modified by: huyahrix
- * @Last Modified time: 2019-11-15 16:53:57
+ * @Last Modified time: 2020-03-30 14:09:09
  * @Description: Description
  */
 
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
+var midleware = require('../../policies/middleware');
 
 //var VerifyToken = require('../auth/VerifyToken');
 
@@ -34,7 +35,9 @@ router.post('/', function (req, res) {
 });
 
 // RETURNS ALL THE USERS IN THE DATABASE
-router.get('/', function (req, res) {
+//app.post('/login', handlers.login);
+//app.get('/', middleware.checkToken, handlers.index);
+router.get('/', midleware.checkToken, function (req, res) {
     User.find({}, function (err, users) {
         if (err)
         {

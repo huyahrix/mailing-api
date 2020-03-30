@@ -17,5 +17,12 @@ https://docs.mongodb.com/manual/crud/
 http://mongodb.github.io/node-mongodb-native/3.3/api/MongoClient.html
 https://www.npmjs.com/package/mongodb
 
-#
+# res
 https://blog.fullstacktraining.com/res-json-vs-res-send-vs-res-end-in-express/
+
+# authentication
+https://medium.com/dev-bits/a-guide-for-adding-jwt-token-based-authentication-to-your-single-page-nodejs-applications-c403f7cf04f4
+https://stackabuse.com/authentication-and-authorization-with-jwts-in-express-js/
+
+# note
+http://expressjs.com/en/guide/using-middleware.html
