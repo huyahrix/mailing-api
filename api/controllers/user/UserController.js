@@ -3,7 +3,7 @@
  * @Email: infjnite@gmail.com
  * @Date: 2019-11-15 11:07:25
  * @Last Modified by: huyahrix
- * @Last Modified time: 2020-03-30 14:09:09
+ * @Last Modified time: 2020-03-30 18:08:10
  * @Description: Description
  */
 
@@ -11,6 +11,9 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 var midleware = require('../../policies/middleware');
+let jwt = require('jsonwebtoken');
+const config = require('../../../config');
+
 
 //var VerifyToken = require('../auth/VerifyToken');
 
@@ -82,16 +85,51 @@ router.delete('/:id', function (req, res) {
 
 // UPDATES A SINGLE USER IN THE DATABASE
 // Added VerifyToken middleware to make sure only an authenticated user can put to this route
-router.put('/:id', /* VerifyToken, */ function (req, res) {
-    User.findByIdAndUpdate(req.params.id, req.body, {
-        new: true
-    }, function (err, user) {
-        if (err) {
-            return res.status(500).send('There was a problem updating the user.');
-        }
-        res.status(200).send(user);
-    });
-});
+// router.put('/:id', /* VerifyToken, */ function (req, res) {
+//     User.findByIdAndUpdate(req.params.id, req.body, {
+//         new: true
+//     }, function (err, user) {
+//         if (err) {
+//             return res.status(500).send('There was a problem updating the user.');
+//         }
+//         res.status(200).send(user);
+//     });
+// });
 
+router.post('/login', (req, res) => {
+    let username = req.body.username;
+    let password = req.body.password;
+    // For the given username fetch user from DB
+    let mockedUsername = 'admin';
+    let mockedPassword = '123';
+
+    if (username && password) {
+        if (username === mockedUsername && password === mockedPassword) {
+            let token = jwt.sign({
+                username: username
+            },
+                config.secret, {
+                    expiresIn: '24h' // expires in 24 hours
+                }
+            );
+            // return the JWT token for the future API calls
+            res.status(200).send({
+                success: true,
+                message: 'Authentication successful!',
+                token: token
+            });
+        } else {
+            res.status(403).send({
+                success: false,
+                message: 'Incorrect username or password'
+            });
+        }
+    } else {
+        res.status(400).send({
+            success: false,
+            message: 'Authentication failed! Please check the request'
+        });
+    }
+});
 
 module.exports = router;

@@ -1,11 +1,11 @@
 var appRouter = function (app) {
 
-    app.get('/', function (req, res) {
+    app.get('/api/', function (req, res) {
         res.status(200).send('Welcome to our restful API');
     });
 
     var UserController = require('../api/controllers/user/UserController');
-    app.use('/api/users', UserController);
+    app.use('/api/user', UserController);
 
     var AuthController = require('../api/controllers/auth/AuthController');
     app.use('/api/auth', AuthController);

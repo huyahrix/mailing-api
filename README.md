@@ -24,5 +24,8 @@ https://blog.fullstacktraining.com/res-json-vs-res-send-vs-res-end-in-express/
 https://medium.com/dev-bits/a-guide-for-adding-jwt-token-based-authentication-to-your-single-page-nodejs-applications-c403f7cf04f4
 https://stackabuse.com/authentication-and-authorization-with-jwts-in-express-js/
 
+# logger
+https://www.digitalocean.com/community/tutorials/how-to-use-winston-to-log-node-js-applications
+
 # note
 http://expressjs.com/en/guide/using-middleware.html
