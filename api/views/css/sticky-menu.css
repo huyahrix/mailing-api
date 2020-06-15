@@ -46,13 +46,22 @@ html {
     height: 100%;
     padding-top: 150px;
     text-align: center;
-    background: #fff;
+    background-image: url('https://i.pinimg.com/originals/89/b5/50/89b55008f4961e24d16d4e72bc8c0251.jpg'); 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center center;
 }
 .about-section {
     height: 100%;
     padding-top: 150px;
     text-align: center;
     background: #EFDECD;
+}
+.mail-section {
+    height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    background: #fff;
 }
 .whatwedo-section {
     height: 100%;
