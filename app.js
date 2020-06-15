@@ -7,20 +7,21 @@
  * @Description: Description
  */
 'use strict';
-var express = require('express');
-var bodyParser = require('body-parser');
-var routes = require('./config/routes.js');
-var morgan = require('morgan');
+const express = require('express');
+const bodyParser = require('body-parser');
+const initRoutes = require('./config/routes.js');
+const morgan = require('morgan');
 
-// var db = require('./config/mongodb');
+// const db = require('./config/mongodb');
 
 global.__root   = __dirname + '/';
-var app = express();
+const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('combined'));
-//app.use(app.router);
-routes(app);
+
+app.use(express.static('api/views'));
+initRoutes(app);
 
 module.exports = app;

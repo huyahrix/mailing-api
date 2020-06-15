@@ -1,5 +1,10 @@
 # Express-RestAPI
 
+# run dev 
+    $ npm install -g nodemon
+    $ npm install --save-dev nodemon
+
+
 # Express Tutorial Part 3: Using a Database (with Mongoose)
 https://developer.mozilla.org/vi/docs/Learn/Server-side/Express_Nodejs/mongoose
 https://github.com/mdn/express-locallibrary-tutorial.git
@@ -29,3 +34,10 @@ https://www.digitalocean.com/community/tutorials/how-to-use-winston-to-log-node-
 
 # note
 http://expressjs.com/en/guide/using-middleware.html
+
+# views
+https://html5-templates.com/preview/bootstrap-scrolling-sticky-menu.html
+
+# express 
+Serving static files in Express
+https://expressjs.com/en/starter/static-files.html
