@@ -41,3 +41,6 @@ https://html5-templates.com/preview/bootstrap-scrolling-sticky-menu.html
 # express 
 Serving static files in Express
 https://expressjs.com/en/starter/static-files.html
+
+# mail
+https://myaccount.google.com/lesssecureapps
