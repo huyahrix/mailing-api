@@ -8,19 +8,19 @@ $(window).scroll(function() {
     }
 });
 $(document).ready(function() {
-    $("#back2Top").click(function(event) {
+    $('#back2Top').click(function(event) {
         event.preventDefault();
-        $("html, body").animate({ scrollTop: 0 }, "slow");
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
         return false;
     });
 
 });
- /*Scroll to top when arrow up clicked END*/
+/*Scroll to top when arrow up clicked END*/
 $(window).scroll(function() {		//jQuery to collapse menu on scroll
-    if ($(".navbar").offset().top > 50) {
-        $(".navbar-fixed-top").addClass("top-nav-collapse");
+    if ($('.navbar').offset().top > 50) {
+        $('.navbar-fixed-top').addClass('top-nav-collapse');
     } else {
-        $(".navbar-fixed-top").removeClass("top-nav-collapse");
+        $('.navbar-fixed-top').removeClass('top-nav-collapse');
     }
 });
 $(function() {						//Page scrolling feature with kQuery Easing plugin

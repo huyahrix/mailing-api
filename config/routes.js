@@ -1,20 +1,22 @@
 /**
+ * @copyright
+ * @author ngochuy
+ * @create 2020-09-05
+ * @update 2020-09-05
  */
-const express = require('express');
-const router = express.Router();
+'use strict';
+const multer = require('multer'); //middleware for handling multipart/form-data
 const homeController = require('../api/controllers/homeController');
 const emailController = require('../api/controllers/emailController');
 
-let initRoutes = (app) => {
-
-    router.get('/', homeController.getHome);
-    router.get('/index.html', homeController.getHome);
-    router.get('/home', homeController.getHome);
-
-    router.get('/mail', emailController.mail);
-    router.post('/mail/send-email', emailController.sendMail);
-
-    return app.use('/', router);
+const initRoutes = (app) => {
+    /********************** home **********************/
+    app.get('/', homeController.getHome);
+    app.get('/index.html', homeController.getHome);
+    app.get('/home', homeController.getHome);
+    /********************** mail **********************/
+    app.get('/mail', emailController.mail);
+    app.post('/mail/send-email', multer().array('formData'), emailController.sendMail);
 };
 
 module.exports = initRoutes;

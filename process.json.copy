@@ -1,0 +1,15 @@
+{
+  "apps" : [{
+    "name"        : "SOCKET-DEMO",
+    "script"      : "./app.js",
+    "watch"       : false,
+    "max_memory_restart"  : "1000M",
+    "log_date_format"     : "MM-DD HH:mm",
+    "env"                 : {
+      "NODE_PORT" : 3000,
+      "NODE_ENV"  : "development",
+      "API_URL"   : "http://apricot.diginet.com.vn:3000",
+      "SECRET"    : ""
+    }
+  }]
+}
