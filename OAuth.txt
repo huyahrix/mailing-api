@@ -24,3 +24,7 @@ Content-type: application/json; charset=utf-8
   "expires_in": 3599, 
   "refresh_token": "1//04_eQa4LdHXH_CgYIARAAGAQSNwF-L9IryFuJQh8e-_CjNxvegNW7eh6XKr0zEt6ouUvP0LZFKskrNSTAHoJRbiEsiSHN20m8_do"
 }
+
+
+MAILING_SERVICE_CLIENT_ID = 492576851442-g09hhtnvjs7cbfrhm1uqk94j784uhq4k.apps.googleusercontent.com
+MAILING_SERVICE_CLIENT_SECRET = 5jCbnXIcfpIHE6qxMk0UetBP
