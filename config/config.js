@@ -11,6 +11,7 @@ const config = {
     port: process.env.NODE_PORT,
     apiURL: process.env.API_URL,
     secret: process.env.SECRET,
+    MAILING_SERVICE_REFRESH_TOKEN: process.env.MAILING_SERVICE_REFRESH_TOKEN,
 };
 
 module.exports = config;

@@ -9,7 +9,7 @@ const MailController = require('../api/controllers/MailController');
 
 const initRoutes = (app) => {
     /********************** mail **********************/
-    app.post('/', MailController);
+    app.post('/mailing', MailController);
 };
 
 module.exports = initRoutes;

@@ -30,7 +30,7 @@ const checkFile             = require('./checkFile');
 const readExcel             = require('./readExcel');
 const regexString           = require('./regexString');
 
-const Utils = {
+let Utils = {
     ExcelReport             :     ExcelReport,
     ExcelTemplate           :     ExcelTemplate,
     ExcelTemplateByBinary   :     ExcelTemplateByBinary,

@@ -21,6 +21,7 @@ const TEMPLATES = {
         subject: '[ABC Inc.] Welcome to ABC Inc.',
     },
 };
+
 /**
  * Send Email
  */
@@ -28,6 +29,7 @@ Mailing.sendEmail = data => {
     oauth2Client.setCredentials({
         refresh_token: MAILING_SERVICE_REFRESH_TOKEN,
     });
+    console.log('MAILING_SERVICE_REFRESH_TOKEN',process.env.MAILING_SERVICE_REFRESH_TOKEN);
     const accessToken = oauth2Client.getAccessToken();
     const smtpTransport = nodemailer.createTransport({
         service: 'gmail',
