@@ -15,8 +15,6 @@ const getSetting            = require('./getSetting');
 const addZero               = require('./addZero');
 const stringToMinutes       = require('./stringToMinutes');
 const numb                  = require('./numb');
-const encryption            = require('./encryption');
-const auth                  = require('./auth');
 const ExcelReport           = require('./excel-report');
 const {ExcelTemplate,ExcelTemplateByBinary}       = require('./excel-template');
 const sql                   = require('./sql');
@@ -33,7 +31,6 @@ const readExcel             = require('./readExcel');
 const regexString           = require('./regexString');
 
 const Utils = {
-    auth                    :     auth,
     ExcelReport             :     ExcelReport,
     ExcelTemplate           :     ExcelTemplate,
     ExcelTemplateByBinary   :     ExcelTemplateByBinary,
@@ -47,12 +44,6 @@ const Utils = {
     isDateISO               :     isDateISO,
     isInt                   :     numb.isInt,
     intLimit                :     numb.intLimit,
-    decrypt                 :     encryption.decrypt,
-    encrypt                 :     encryption.encrypt,
-    decryptJWT              :     encryption.decryptJWT,
-    encryptJWT              :     encryption.encryptJWT,
-    encryptPHP              :     encryption.encryptPHP,
-    decryptPHP              :     encryption.decryptPHP,
     sqlString               :     sql.sqlString,
     sqlDatetime             :     sql.sqlDatetime,
     formatParam             :     sql.formatParam,
@@ -69,5 +60,69 @@ const Utils = {
     readExcel               :     readExcel,
     regexString             :     regexString,
 };
+
+const sha256 = require('sha256');
+const check = require('express-validator').check;
+
+// import {
+//     PASSWORD_IS_EMPTY,
+//     PASSWORD_LENGTH_MUST_BE_MORE_THAN_8,
+//     EMAIL_IS_EMPTY,
+//     EMAIL_IS_IN_WRONG_FORMAT,
+// } from './constant';
+
+const message = require('../helpers/constant');
+
+Utils.generateHashedPassword = password => sha256(password);
+
+Utils.generateServerErrorCode = function generateServerErrorCode(
+  res,
+  code,
+  fullError,
+  msg,
+  location = 'server'
+) {
+    const errors = {};
+    errors[location] = {
+        fullError,
+        msg,
+    };
+
+    return res.status(code).json({
+        code,
+        fullError,
+        errors,
+    });
+};
+// ================================
+// Validation:
+// Handle all validation check for the server
+// ================================
+
+Utils.registerValidation = [
+    check('email')
+    .exists()
+    .withMessage(message.EMAIL_IS_EMPTY)
+    .isEmail()
+    .withMessage(message.EMAIL_IS_IN_WRONG_FORMAT),
+    check('password')
+    .exists()
+    .withMessage(message.PASSWORD_IS_EMPTY)
+    .isLength({ min: 8 })
+    .withMessage(message.PASSWORD_LENGTH),
+];
+
+Utils.loginValidation = [
+    check('email')
+    .exists()
+    .withMessage(message.EMAIL_IS_EMPTY)
+    .isEmail()
+    .withMessage(message.EMAIL_IS_IN_WRONG_FORMAT),
+    check('password')
+    .exists()
+    .withMessage(message.PASSWORD_IS_EMPTY)
+    .isLength({ min: 8 })
+    .withMessage(message.PASSWORD_LENGTH),
+];
 
 module.exports = Utils;

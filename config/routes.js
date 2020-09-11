@@ -1,22 +1,15 @@
 /**
  * @copyright
  * @author ngochuy
- * @create 2020-09-05
- * @update 2020-09-05
+ * @create 2020-09-11
+ * @update 2020-09-11
  */
 'use strict';
-const multer = require('multer'); //middleware for handling multipart/form-data
-const homeController = require('../api/controllers/homeController');
-const emailController = require('../api/controllers/emailController');
+const MailController = require('../api/controllers/MailController');
 
 const initRoutes = (app) => {
-    /********************** home **********************/
-    app.get('/', homeController.getHome);
-    app.get('/index.html', homeController.getHome);
-    app.get('/home', homeController.getHome);
     /********************** mail **********************/
-    app.get('/mail', emailController.mail);
-    app.post('/mail/send-email', multer().array('formData'), emailController.sendMail);
+    app.post('/', MailController);
 };
 
 module.exports = initRoutes;
