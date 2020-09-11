@@ -4,3 +4,5 @@ assets/doc/*
 views/**/*.ejs
 config/version.js
 api/views/*
+*.txt
+*.md
