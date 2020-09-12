@@ -13,8 +13,8 @@
 
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
+// const fs = require('fs');
+// const path = require('path');
 const http = require('http');
 const url = require('url');
 const opn = require('open');
@@ -65,7 +65,7 @@ async function authenticate(scopes) {
                   res.end('Authentication successful! Please return to the console.');
                   server.destroy();
                   const {tokens} = await oauth2Client.getToken(qs.get('code'));
-                  oauth2Client.credentials = tokens; // eslint-disable-line require-atomic-updates
+                  oauth2Client.credentials = tokens;
                   resolve(oauth2Client);
               }
           } catch (e) {

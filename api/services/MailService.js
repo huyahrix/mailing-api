@@ -1,8 +1,13 @@
+/**
+ * @copyright
+ * @author ngochuy
+ * @create 2020-09-11
+ * @update 2020-09-11
+ */
 'use strict';
 const nodemailer = require('nodemailer');
 const ejs = require('ejs');
 const { google } = require('googleapis');
-const { invalid } = require('moment');
 const { OAuth2 } = google.auth;
 const OAUTH_PLAYGROUND = 'https://developers.google.com/oauthplayground';
 const {
