@@ -10,8 +10,12 @@ var imap = {
 };
 const notifier = mailnotifier(imap);
 
+notifier.on('connected', function () {
+    console.log('\x1b[44m','mail-notifier is connected successfully','\x1b[0m');
+});
+
 notifier.on('mail', function (mail) {
-    console.log('===== mail-notifier => mail =====');
+    console.log('===== mailnotifier => mail =====');
     if (!mail){
         console.log('mail is Undefine');
         return;
@@ -23,10 +27,6 @@ notifier.on('mail', function (mail) {
     console.log(mail);
 });
 
-notifier.on('connected', function () {
-    console.log('mail-notifier is connected successfully');
-});
-
 notifier.on('end', function () {
     console.log('...notification ended...');
 });
@@ -36,4 +36,4 @@ notifier.on('error', function (err) {
 });
 
 notifier.start();
-console.log('\x1b[44m','mail-notifier is connected successfully','\x1b[0m');
+
