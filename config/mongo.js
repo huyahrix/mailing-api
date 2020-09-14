@@ -12,7 +12,7 @@ const mongo = {
     connect: () => {
         mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
             if (process.env.NODE_ENV !== 'test') {
-                console.log('\x1b[44m', 'Connected to ' + process.env.MONGODB_URL, '\x1b[0m');
+                console.log('\x1b[44m', 'Connected to ' + process.env.MONGODB_URL,'\x1b[0m','\n');
             }
         }).catch(err => {
             console.error('\x1b[31m', `Connect to mongodb failed(${process.env.MONGODB_URL})\n`, err.message, '\x1b[30m');

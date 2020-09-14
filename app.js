@@ -10,8 +10,10 @@
 const config = require('./config/config');
 const app = require('./config/express');
 const mongo = require('./config/mongo');
+const maillistener = require('./config/maillistener');
 
 mongo.connect();
+maillistener.start();
 app.set('config', config);
 
 app.listen(config.port, () => {
